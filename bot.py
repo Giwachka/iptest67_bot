@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, WebAppInfo
 
-BOT_TOKEN = "ТВОЙ_ТОКЕН"
+BOT_TOKEN = "8853343511:AAHa-qihnJulCYenM3PDyop85ZhLFIQZ_WY"
 WEBAPP_URL = "https://giwachka.github.io/ipapp/index.html"
 
 bot = Bot(token=BOT_TOKEN)
