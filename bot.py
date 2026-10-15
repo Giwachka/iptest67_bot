@@ -1,4 +1,4 @@
-impor asyncio
+import asyncio
 import json
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart
@@ -35,7 +35,6 @@ async def handle_webapp(message: types.Message):
     try:
         data = json.loads(message.web_app_data.data)
 
-        # Формируем текст с секциями
         lines = []
 
         # Telegram
@@ -89,6 +88,15 @@ async def handle_webapp(message: types.Message):
         await message.answer("\n".join(lines), parse_mode="Markdown")
     except Exception as e:
         await message.answer(f"Ошибка: {e}")
+
+
+# Удаляем сервисные сообщения о закреплении в ЛИЧКЕ С БОТОМ
+@dp.message(F.pinned_message)
+async def delete_pin_notifications(message: types.Message):
+    try:
+        await message.delete()
+    except Exception:
+        pass
 
 
 async def main():
